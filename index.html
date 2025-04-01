@@ -1,0 +1,71 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="music-player">
+    <div class="header">
+      <h1>Music Player</h1>
+      <button id="selectFolder" class="select-folder-btn">
+        <i class="fas fa-folder-open"></i> Open Music Folder
+      </button>
+    </div>
+    
+    <div class="now-playing">
+      <div class="album-art">
+        <img id="albumArt" src="placeholder-album.jpg" alt="Album Art">
+      </div>
+      
+      <div class="song-details">
+        <h2 id="songTitle">No song selected</h2>
+        <p id="artistName">Unknown Artist</p>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+      </div>
+      
+      <div class="control-buttons">
+        <button id="prevBtn" class="control-btn">
+          <i class="fas fa-step-backward"></i>
+        </button>
+        <button id="playPauseBtn" class="control-btn play-pause">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="nextBtn" class="control-btn">
+          <i class="fas fa-step-forward"></i>
+        </button>
+        <button id="shuffleBtn" class="control-btn">
+          <i class="fas fa-random"></i>
+        </button>
+        <div class="volume-control">
+          <i class="fas fa-volume-up"></i>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+        </div>
+      </div>
+    </div>
+    
+    <div class="playlist-container">
+      <h3>Playlist</h3>
+      <ul id="playlist" class="playlist"></ul>
+    </div>
+  </div>
+
+  <audio id="audioPlayer"></audio>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
